@@ -78,18 +78,19 @@ Installation
 -----
 * The latest release is available for download on the GetSimple Homepage: [Go to](http://get-simple.info/extend/plugin/nanogallery/637/)
 * Download the zip file.
-* Extract the content of the zip file into the GetSimple 'plugins' directory.
+* Extract the content of the zip file into the GetSimple ```plugins``` directory.
 
 
 Syntax and options
 ------------------
-Arguments are separated by ‘&’. Syntax is case sensitive. Important : best results are obtained with images having the same size.
+Arguments are separated by ```&```. Syntax is case sensitive. Important : best results are obtained with images having the same size.
 Following arguments are supported 
 
 ### General arguments
 * ```theme``` : name of the theme ```default``` ```dark``` ```light``` ```nano``` (optional)
 * ```nivoOptions``` : Options of the Nivo Slider
-  See Nivo Slider homepage for all the jQuery plugin options: http://dev7studios.com/nivo-slider/#/documentation
+  * See Nivo Slider homepage for all the jQuery plugin options:
+  * http://dev7studios.com/nivo-slider/#/documentation
 * ```forceJQuery``` : ```true``` / ```false``` - force load jQuery
 
 
@@ -103,8 +104,8 @@ Following arguments are supported
 ### List of images specific arguments
 * ```kind``` : ```url``` - set the storage type (mandatory)
 * ```listImagesBaseURL``` : Base URL where the images are stored
-* ```listImages``` : List of the image filenames (separated by ‘|’)
-* ```listCaptions``` : List of the captions to display over images (separated by ‘|’)
+* ```listImages``` : List of the image filenames (separated by ```|```)
+* ```listCaptions``` : List of the captions to display over images (separated by ```|```)
    Use underscore for one space between words.
 
 
@@ -113,12 +114,13 @@ Following arguments are supported
 
 ```
 (%nanoslider
-kind=picasa
-&userID=cbrisbois@gmail.com&album=5856259539659194001
-&displayCaption=false
-&maxWidth=1000px
-&nivoOptions={"effect":"fold","pauseOnHover":false,"randomStart":true}
-&theme=nano
+  kind=picasa
+  &userID=cbrisbois@gmail.com
+  &album=5856259539659194001
+  &displayCaption=false
+  &maxWidth=1000px
+  &nivoOptions={"effect":"fold","pauseOnHover":false,"randomStart":true}
+  &theme=nano
 %)
 ```
 
@@ -127,12 +129,14 @@ kind=picasa
 
 ```
 (%nanoslider
-kind=url&maxWidth=1000px
-&listImagesBaseURL=http://nanoslider.googlecode.com/files/
-&listImages=nanoslider_sample1.jpg|nanoslider_sample2.jpg|nanoslider_sample3.jpg|nanoslider_sample4.jpg
-&nivoOptions={"effect":"random","pauseOnHover":false,"randomStart":true,"pauseTime":4000}
-&theme=dark
-%)```
+  kind=url
+  &maxWidth=1000px
+  &listImagesBaseURL=http://nanoslider.googlecode.com/files/
+  &listImages=nanoslider_sample1.jpg|nanoslider_sample2.jpg|nanoslider_sample3.jpg|nanoslider_sample4.jpg
+  &nivoOptions={"effect":"random","pauseOnHover":false,"randomStart":true,"pauseTime":4000}
+  &theme=dark
+%)
+```
 
 
 
