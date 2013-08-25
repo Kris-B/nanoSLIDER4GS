@@ -30,7 +30,7 @@ Usage with Picasa/Google+
 To display a slider, insert a code like this one in a GetSimple page :
 
 ``` HTML
-(%nanoslider kind=picasa&userID=PicasaUserID&album=PicasaAlbum%)
+  (%nanoslider kind=picasa&userID=PicasaUserID&album=PicasaAlbum%)
 ```
 
 Replace:
@@ -42,7 +42,7 @@ Note: syntax is case sensitive.
 Example:
 
 ``` HTML
-(%nanoslider kind=picasa&userID=cbrisbois@gmail.com&album=5856259539659194001%)
+  (%nanoslider kind=picasa&userID=cbrisbois@gmail.com&album=5856259539659194001%)
 ```
 
 Usage with a list of images
@@ -51,7 +51,7 @@ Usage with a list of images
 To display a slider, insert a code like this one in a GetSimple page :
 
 ``` HTML
-(%nanoslider kind=url&listImagesBaseURL=baseURL&listImages=image1|image2|...|imageN%)
+  (%nanoslider kind=url&listImagesBaseURL=baseURL&listImages=image1|image2|...|imageN%)
 ```
 
 Replace:
@@ -63,11 +63,11 @@ Note: syntax is case sensitive.
 Example:
 
 ``` HTML
-(%nanoslider
-kind=url
-&listImagesBaseURL=http://nanoslider.googlecode.com/files/
-&listImages=nanoslider_sample1.jpg|nanoslider_sample2.jpg|nanoslider_sample3.jpg|nanoslider_sample4.jpg
-%)
+  (%nanoslider
+    kind=url
+    &listImagesBaseURL=http://nanoslider.googlecode.com/files/
+    &listImages=nanoslider_sample1.jpg|nanoslider_sample2.jpg|nanoslider_sample3.jpg|nanoslider_sample4.jpg
+  %)
 ```
 
 
