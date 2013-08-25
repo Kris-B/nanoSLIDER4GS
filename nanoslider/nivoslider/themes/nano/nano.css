@@ -1,0 +1,94 @@
+/*
+Skin Name: Nivo Slider Default Theme
+Skin URI: http://nivo.dev7studios.com
+Description: The default skin for the Nivo Slider.
+Version: 1.3
+Author: Gilbert Pellegrom
+Author URI: http://dev7studios.com
+Supports Thumbs: true
+*/
+
+.theme-nano .nivoSlider {
+	position:relative;
+	background:#000 url(loading.gif) no-repeat 50% 50%;
+    margin:5px;
+    -webkit-box-shadow: 0px 0px 5px 5px #000;
+    -moz-box-shadow: 0px 0px 5px 5px #000;
+    box-shadow: 0px 0px 5px 5px #000;
+	overflow:hidden;
+}
+.theme-nano .nivoSlider img {
+	position:absolute;
+	top:0px;
+	left:0px;
+	display:none;
+}
+.theme-nano .nivoSlider a {
+	border:0;
+	display:block;
+}
+
+.theme-nano .nivo-controlNav {
+	text-align: center;
+	padding: 5px 0;
+}
+.theme-nano .nivo-controlNav a {
+	display:inline-block;
+	width:10px;
+	height:18px;
+	background:url(bullets6.png) no-repeat;
+	text-indent:-9999px;
+	border:0;
+	margin: 0 2px;
+}
+.theme-nano .nivo-controlNav a.active {
+	background-position:0 -18px;
+}
+
+.theme-nano .nivo-directionNav a {
+	display:block;
+	width:30px;
+	height:30px;
+	background:url(arrows.png) no-repeat;
+	text-indent:-9999px;
+	border:0;
+	opacity: 0;
+	-webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -o-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
+}
+.theme-nano:hover .nivo-directionNav a { opacity: 1; }
+.theme-nano a.nivo-nextNav {
+	background-position:-30px 0;
+	right:15px;
+}
+.theme-nano a.nivo-prevNav {
+	left:15px;
+}
+
+.theme-nano .nivo-caption {
+    font-family: Helvetica, Arial, sans-serif;
+}
+.theme-nano .nivo-caption a {
+    color:#fff;
+    border-bottom:1px dotted #fff;
+}
+.theme-nano .nivo-caption a:hover {
+    color:#fff;
+}
+
+.theme-nano .nivo-controlNav.nivo-thumbs-enabled {
+	width: 100%;
+}
+.theme-nano .nivo-controlNav.nivo-thumbs-enabled a {
+	width: auto;
+	height: auto;
+	background: none;
+	margin-bottom: 5px;
+}
+.theme-nano .nivo-controlNav.nivo-thumbs-enabled img {
+	display: block;
+	width: 120px;
+	height: auto;
+}
