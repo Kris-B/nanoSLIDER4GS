@@ -36,7 +36,7 @@ To display a slider, insert a code like this one in a GetSimple page :
 
 Replace:
 - PicasaUserID with your Picasa/Google+ user ID.
-- PicasaAlbum? with the Picasa/Google+ album ID where the images are stored.
+- PicasaAlbum with the Picasa/Google+ album ID where the images are stored.
 
 Note: syntax is case sensitive.
 
@@ -56,7 +56,7 @@ To display a slider, insert a code like this one in a GetSimple page :
 ```
 
 Replace:
-- FlickrAlbumID? with the Flickr photoset ID where the images are stored (can be found in the URL when the photoset is opened in Flickr).
+- FlickrAlbumID with the Flickr photoset ID where the images are stored (can be found in the URL when the photoset is opened in Flickr).
 
 Note: syntax is case sensitive.
 
