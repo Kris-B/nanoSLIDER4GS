@@ -1,8 +1,8 @@
 <?php
 /*
 Plugin Name: nanoSlider
-Description: Portage of the Nivo Slider. Possible image source : one list of URLs or Picasa/Google+ album
-Version: 1.0.5
+Description: Portage of the Nivo Slider. Possible image source : one list of URLs or Picasa/Google+ album or Flickr photoset
+Version: 1.1.0
 Author: Christophe Brisbois
 Author URI: http://www.brisbois.fr/
 */
@@ -15,10 +15,10 @@ $nanoSlider_debugmode=false;
 register_plugin(
 	$thisfile, 						//Plugin id
 	'nanoSlider', 					//Plugin name
-	'1.0.5', 						//Plugin version
+	'1.1.0', 						//Plugin version
 	'Christophe Brisbois',  		//Plugin author
 	'http://www.brisbois.fr/',		//author website
-	'<b>Portage of the Nivo Slider.</b><br> Supported image source : one list of URLs or one Picasa/Google+ photo album', //Plugin description
+	'<b>Portage of the Nivo Slider.</b><br> Supported image source : one list of URLs or one Picasa/Google+ photo album or one Flickr photoset', //Plugin description
 	'pages', 						//page type - on which admin tab to display
 	'nanoSlider_show'				//main function (administration)
 );
@@ -47,8 +47,8 @@ class nanoSlider_slider {
 	// check the consistency of the parameters
 	public function checkConsistency() {
 	
-		if( empty($this->_kind) OR ($this->_kind != 'picasa' AND $this->_kind != 'url') ) {
-			$this->_consistencyError='Incorrect parameters for nanoSlider. Please define the "kind". Possible values : "url", "picasa".'.$this->_kind;
+		if( empty($this->_kind) OR ($this->_kind != 'picasa' AND $this->_kind != 'url' AND $this->_kind != 'flickr') ) {
+			$this->_consistencyError='Incorrect parameters for nanoSlider. Please define the "kind". Possible values : "url", "picasa", "flickr".'.$this->_kind;
 			return false;
 		}
 		
@@ -57,6 +57,11 @@ class nanoSlider_slider {
 			return true;
 		}
 
+		if( $this->_kind == 'flickr' AND !empty($this->_albumName)  ) {
+			return true;
+		}
+
+		
 		if( $this->_kind == 'url' AND !empty($this->_listImages)  ) {
 			return true;
 		}
@@ -77,6 +82,9 @@ class nanoSlider_slider {
 		switch( $this->_kind ){
 			case "picasa":
 				if( !empty($this->_userID) ) { $s.="'userID':'".$this->_userID."',"; } 
+				if( !empty($this->_albumName) ) { $s.="'albumName':'".$this->_albumName."',"; } 
+				break;
+			case "flickr":
 				if( !empty($this->_albumName) ) { $s.="'albumName':'".$this->_albumName."',"; } 
 				break;
 			case "url":

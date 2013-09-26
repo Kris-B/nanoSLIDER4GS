@@ -1,7 +1,6 @@
 // Plugin Name: nanoSlider
-// Plugin Name: nanoSlider
-// Description: Portage of the Nivo Slider. Possible image source : one list of URLs or Picasa/Google+ album
-// Version: 1.0.5
+// Description: Portage of the Nivo Slider. Possible image source : one list of URLs or Picasa/Google+ album or Flickr photoset
+// Version: 1.1.0
 // Author: Christophe Brisbois
 // Author URI: http://www.brisbois.fr/
 
@@ -54,7 +53,10 @@ var nanoSLIDER = {
 				jQuery('#'+sliderID).nivoSlider(nOpt);
 				break;
 			case "picasa":
-				nanoSLIDER.GetPicasaImages(params.userID, params.albumName,sliderID,nOpt, params.displayCaption);
+				nanoSLIDER.GetPicasaImages(params.userID, params.albumName, sliderID, nOpt, params.displayCaption);
+				break;
+			case "flickr":
+				nanoSLIDER.GetFlickrImages(params.albumName, sliderID, nOpt, params.displayCaption);
 				break;
 		}
 	
@@ -93,6 +95,37 @@ var nanoSLIDER = {
 
 	},
 
+	GetFlickrImages : function( albumName, sliderID, nOpt, displayCaption) {
+		var g_flickrApiKey="2f0e634b471fdb47446abcb9c5afebdc";
+		var url = "http://api.flickr.com/services/rest/?&method=flickr.photosets.getPhotos&api_key=" + g_flickrApiKey + "&photoset_id="+albumName+"&extras=description,views,url_s,url_o,url_m&format=json&jsoncallback=?";
+		jQuery.ajaxSetup({ cache: false });
+		jQuery.support.cors = true;
+		url = url + "&callback=?";
+		jQuery.getJSON(url, function(data) {
+			
+			jQuery.each(data.photoset.photo, function(i,data){
+				//Get the title  (=filename)
+				itemTitle = data.title;
+				//Get the URL of the thumbnail
+				//itemThumbURL = data.media$group.media$thumbnail[0].url;
+				//Get the ID 
+				itemID = data.id;
+				//Get the description
+				itemDescription = data.description._content;
+				imgUrl=data.url_o;
+				var capt="";
+				if( displayCaption == true ) { capt=itemDescription; }
+				var nImg=jQuery('<img src="'+imgUrl+'" alt="" title="'+capt+'"></img>').appendTo('#'+sliderID);
+			});
+			jQuery('#'+sliderID).nivoSlider(nOpt);
+		})
+		//.success(function() { alert("second success"); 	})
+		.error( function(XMLHttpRequest, textStatus, errorThrown) {
+			alert("Cannot retrieve Flickr images (URL:"+url+") : " + XMLHttpRequest.responseText); 
+		});
+		//.complete(function() { alert("complete"); });
+
+	}
 
 	
 
