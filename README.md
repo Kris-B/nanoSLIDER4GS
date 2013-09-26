@@ -14,7 +14,8 @@ Key features
 - support all the Nivo Slider options (credits: Dev7Studios)
 - Possible image sources :
   * Picasa/Google+ account
-  * list of images (url) (e.g. stored in a GetSimple site)
+  * Flickr account
+  * list of images (url) (e.g. stored on one GetSimple site)
 
 
 Demonstration
@@ -44,6 +45,27 @@ Example:
 ``` HTML
   (%nanoslider kind=picasa&userID=cbrisbois@gmail.com&album=5856259539659194001%)
 ```
+
+Usage with Flickr
+-----
+
+To display a slider, insert a code like this one in a GetSimple page :
+
+``` HTML
+  (%nanoslider kind=flickr&album=FlickrAlbumID%)
+```
+
+Replace:
+- FlickrAlbumID? with the Flickr photoset ID where the images are stored (can be found in the URL when the photoset is opened in Flickr).
+
+Note: syntax is case sensitive.
+
+Example:
+
+``` HTML
+  (%nanoslider kind=picasa&userID=cbrisbois@gmail.com&album=5856259539659194001%)
+```
+
 
 Usage with a list of images
 -----
