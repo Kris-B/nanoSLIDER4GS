@@ -119,7 +119,12 @@ Following arguments are supported
 ### Picasa/Google+ specific arguments
 * ```userID``` : user ID of the Picasa/Google+ account (mandatory)
 * ```kind``` : ```picasa``` - set the storage type (mandatory)
-* ```album``` : album ID - to display only the specified album  (mandatory)
+* ```album``` : album ID - to display only images stored in the specified album  (mandatory)
+* ```displayCaption``` : ```true``` / ```false``` - display or not the title of the images (optional)
+
+### Flickr specific arguments
+* ```kind``` : ```flickr``` - set the storage type (mandatory)
+* ```album``` : photoset ID - to display only images stored in the specified photoset (mandatory)
 * ```displayCaption``` : ```true``` / ```false``` - display or not the title of the images (optional)
 
 
@@ -141,6 +146,19 @@ Following arguments are supported
   &album=5856259539659194001
   &displayCaption=false
   &maxWidth=1000px
+  &nivoOptions={"effect":"fold","pauseOnHover":false,"randomStart":true}
+  &theme=nano
+%)
+```
+
+### Flickr example:
+
+```
+(%nanoslider
+  kind=flickr
+  &album=72157594299597591
+  &displayCaption=false
+  &maxWidth=800px
   &nivoOptions={"effect":"fold","pauseOnHover":false,"randomStart":true}
   &theme=nano
 %)
