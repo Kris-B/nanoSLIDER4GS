@@ -134,6 +134,8 @@ Following arguments are supported
 * ```listImages``` : List of the image filenames (separated by ```|```)
 * ```listCaptions``` : List of the captions to display over images (separated by ```|```)
    Use underscore for one space between words.
+* ```listURLs``` : List of the URLs to associate to each image (separated by ```|```)
+   ```?``` and ```=``` characters are not supported in the URL
 
 
 
@@ -173,6 +175,7 @@ Following arguments are supported
   &maxWidth=1000px
   &listImagesBaseURL=http://nanoslider.googlecode.com/files/
   &listImages=nanoslider_sample1.jpg|nanoslider_sample2.jpg|nanoslider_sample3.jpg|nanoslider_sample4.jpg
+  &listURLs=http://www.brisbois.fr|http://nanogallery.brisbois.fr|http://nanogallery4gs.brisbois.fr|http://nanoslider4gs.brisbois.fr
   &nivoOptions={"effect":"random","pauseOnHover":false,"randomStart":true,"pauseTime":4000}
   &theme=dark
 %)
