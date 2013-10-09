@@ -2,7 +2,7 @@
 /*
 Plugin Name: nanoSlider
 Description: Portage of the Nivo Slider. Possible image source : one list of URLs or Picasa/Google+ album or Flickr photoset
-Version: 1.1.0
+Version: 1.2.0
 Author: Christophe Brisbois
 Author URI: http://www.brisbois.fr/
 */
@@ -15,7 +15,7 @@ $nanoSlider_debugmode=false;
 register_plugin(
 	$thisfile, 						//Plugin id
 	'nanoSlider', 					//Plugin name
-	'1.1.0', 						//Plugin version
+	'1.2.0', 						//Plugin version
 	'Christophe Brisbois',  		//Plugin author
 	'http://www.brisbois.fr/',		//author website
 	'<b>Portage of the Nivo Slider.</b><br> Supported image source : one list of URLs or one Picasa/Google+ photo album or one Flickr photoset', //Plugin description
@@ -41,6 +41,7 @@ class nanoSlider_slider {
 	var $_listImages='';
 	var $_listImagesBaseURL='';
 	var $_listCaptions='';
+	var $_listURLs='';
 	var $_forceJQuery=false;
 	var $_consistencyError='';
 
@@ -91,6 +92,7 @@ class nanoSlider_slider {
 				if( !empty($this->_listImages) ) { $s.="'listImages':'".$this->_listImages."',"; } 
 				if( !empty($this->_listImagesBaseURL) ) { $s.="'listImagesBaseURL':'".$this->_listImagesBaseURL."',"; } 
 				if( !empty($this->_listCaptions) ) { $s.="'listCaptions':'".$this->_listCaptions."',"; } 
+				if( !empty($this->_listURLs) ) { $s.="'listURLs':'".$this->_listURLs."',"; } 
 				break;
 		}
 		if( !empty($this->_maxWidth) ) { $s.="'maxWidth':'".$this->_maxWidth."',"; } 
@@ -152,6 +154,7 @@ class nanoSlider_parsedContent {
 		if( isset($fields['listImages']) ) { $this->_sliders[$n]->_listImages=$fields['listImages']; }
 		if( isset($fields['listImagesBaseURL']) ) { $this->_sliders[$n]->_listImagesBaseURL=$fields['listImagesBaseURL']; }
 		if( isset($fields['listCaptions']) ) { $this->_sliders[$n]->_listCaptions=$fields['listCaptions']; }
+		if( isset($fields['listURLs']) ) { $this->_sliders[$n]->_listURLs=$fields['listURLs']; }
 		if( isset($fields['displayCaption']) ) { $this->_sliders[$n]->_displayCaption=$fields['displayCaption']; }
 		if( isset($fields['forceJQuery']) ) { 
 			if( $fields['forceJQuery'] == 'true' ) { $this->_sliders[$n]->_forceJQuery=$fields['forceJQuery']; }

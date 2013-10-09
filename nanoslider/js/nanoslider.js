@@ -1,6 +1,6 @@
 // Plugin Name: nanoSlider
 // Description: Portage of the Nivo Slider. Possible image source : one list of URLs or Picasa/Google+ album or Flickr photoset
-// Version: 1.1.0
+// Version: 1.2.0
 // Author: Christophe Brisbois
 // Author URI: http://www.brisbois.fr/
 
@@ -42,13 +42,22 @@ var nanoSLIDER = {
 				if( params.listCaptions !== undefined ) {
 					captions=params.listCaptions.replace('_',' ').split('|');
 				}
+				var urls='';
+				if( params.listURLs !== undefined ) {
+					urls=params.listURLs.split('|');
+				}
 				for (var i = 0; i < items.length; i++) {
+					var s='';
 					if( i < captions.length ) {
-						jQuery('<img src="'+params.listImagesBaseURL+items[i]+'" alt="" title="'+captions[i]+'"></img>').appendTo('#'+sliderID);
+						s='<img src="'+params.listImagesBaseURL+items[i]+'" alt="" title="'+captions[i]+'"></img>';
 					}
 					else {
-						jQuery('<img src="'+params.listImagesBaseURL+items[i]+'" alt=""></img>').appendTo('#'+sliderID);
+						s='<img src="'+params.listImagesBaseURL+items[i]+'" alt=""></img>';
 					}
+					if( i < urls.length ) {
+						s='<a href="'+ urls[i] +'">' + s + '</a>';
+					}
+					jQuery(s).appendTo('#'+sliderID);
 				}
 				jQuery('#'+sliderID).nivoSlider(nOpt);
 				break;
