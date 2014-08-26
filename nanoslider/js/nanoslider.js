@@ -1,6 +1,6 @@
 // Plugin Name: nanoSlider
 // Description: Portage of the Nivo Slider. Possible image source : one list of URLs or Picasa/Google+ album or Flickr photoset
-// Version: 1.2.0
+// Version: 1.2.0a
 // Author: Christophe Brisbois
 // Author URI: http://www.brisbois.fr/
 
@@ -73,7 +73,7 @@ var nanoSLIDER = {
 
 	
 	GetPicasaImages : function(userID, albumName, sliderID, nOpt, displayCaption) {
-		var url = 'http://picasaweb.google.com/data/feed/api/user/'+userID+'/albumid/'+albumName+'?alt=json&kind=photo&imgmax=d';
+		var url = 'https://picasaweb.google.com/data/feed/api/user/'+userID+'/albumid/'+albumName+'?alt=json&kind=photo&imgmax=d';
 		jQuery.ajaxSetup({ cache: false });
 		jQuery.support.cors = true;
 		url = url + "&callback=?";
@@ -106,7 +106,7 @@ var nanoSLIDER = {
 
 	GetFlickrImages : function( albumName, sliderID, nOpt, displayCaption) {
 		var g_flickrApiKey="2f0e634b471fdb47446abcb9c5afebdc";
-		var url = "http://api.flickr.com/services/rest/?&method=flickr.photosets.getPhotos&api_key=" + g_flickrApiKey + "&photoset_id="+albumName+"&extras=description,views,url_s,url_o,url_m&format=json&jsoncallback=?";
+		var url = "https://api.flickr.com/services/rest/?&method=flickr.photosets.getPhotos&api_key=" + g_flickrApiKey + "&photoset_id="+albumName+"&extras=description,views,url_s,url_o,url_m&format=json&jsoncallback=?";
 		jQuery.ajaxSetup({ cache: false });
 		jQuery.support.cors = true;
 		url = url + "&callback=?";
