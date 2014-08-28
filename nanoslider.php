@@ -2,7 +2,7 @@
 /*
 Plugin Name: nanoSlider
 Description: Portage of the Nivo Slider. Possible image source : one list of URLs or Picasa/Google+ album or Flickr photoset
-Version: 1.2.0
+Version: 1.2.0a
 Author: Christophe Brisbois
 Author URI: http://www.brisbois.fr/
 */
@@ -15,7 +15,7 @@ $nanoSlider_debugmode=false;
 register_plugin(
 	$thisfile, 						//Plugin id
 	'nanoSlider', 					//Plugin name
-	'1.2.0', 						//Plugin version
+	'1.2.0a', 						//Plugin version
 	'Christophe Brisbois',  		//Plugin author
 	'http://www.brisbois.fr/',		//author website
 	'<b>Portage of the Nivo Slider.</b><br> Supported image source : one list of URLs or one Picasa/Google+ photo album or one Flickr photoset', //Plugin description
