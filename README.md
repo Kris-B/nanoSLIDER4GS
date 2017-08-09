@@ -23,12 +23,6 @@ Key features
   * list of images (url) (e.g. stored on one GetSimple site)
 
 
-Demonstration
--------------
-
-[Go to the demonstration site](http://www.nanoslider4gs.brisbois.fr/)
-
-
 
 Usage with Picasa/Google+
 -----
