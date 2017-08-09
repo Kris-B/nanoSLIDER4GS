@@ -7,7 +7,7 @@ Image slider plugin for GetSimple CMS.
 This plugin is a portage of the NIVO SLIDER to GetSimple CMS. It provides a very easy method to implement quickly a slider on a web page.
   
 <br><br>
-This app is no more supported.
+Note: support for this app has been discontinued.
 <br><br>
   
 Key features
