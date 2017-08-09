@@ -1,10 +1,15 @@
 nanoSLIDER4GS for GetSimple
 ===========
-
+  
 Image slider plugin for GetSimple CMS.
-
+  
+  
 This plugin is a portage of the NIVO SLIDER to GetSimple CMS. It provides a very easy method to implement quickly a slider on a web page.
-
+  
+<br><br>
+This app is no more supported.
+<br><br>
+  
 Key features
 ------------
 - plugin for GetSimple CMS
@@ -13,7 +18,7 @@ Key features
 - no HTML knowledge required
 - support all the Nivo Slider options (credits: Dev7Studios)
 - Possible image sources :
-  * Picasa/Google+ account
+  * Picasa / <del>Google+</del> account
   * Flickr account
   * list of images (url) (e.g. stored on one GetSimple site)
 
@@ -78,7 +83,7 @@ To display a slider, insert a code like this one in a GetSimple page :
 
 Replace:
 - baseURL with the URL where the images are stored
-- listImages with the filenames of the images (separated by ‘|’)
+- listImages with the filenames of the images (separated by â€˜|â€™)
 
 Note: syntax is case sensitive.
 
@@ -117,6 +122,7 @@ Following arguments are supported
 
 
 ### Picasa/Google+ specific arguments
+##### note: Google changed the API on february 9, 2017. Content published after this date can not be displayed
 * ```userID``` : user ID of the Picasa/Google+ account (mandatory)
 * ```kind``` : ```picasa``` - set the storage type (mandatory)
 * ```album``` : album ID - to display only images stored in the specified album  (mandatory)
